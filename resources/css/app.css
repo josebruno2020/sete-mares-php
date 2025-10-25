@@ -1,0 +1,134 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --blue-primary: #51ade5;
+  --blue-secondary: #3871c1;
+  --font-roboto: "Arial", sans-serif;
+  --font-cinzel: "Georgia", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Roboto", sans-serif;
+}
+
+.cinzelFont {
+  font-family: "Cinzel", serif;
+}
+
+.primary {
+  color: var(--blue-primary);
+}
+
+.why {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url("/assets/img/alunos_2.webp");
+}
+
+.menu-item {
+  font-family: "cinzel", serif;
+  transition: transform 0.3s ease, border-bottom 0.5s ease;
+  position: relative;
+  z-index: 1;
+  border-bottom: 3px solid transparent;
+}
+
+.menu-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-item:hover {
+  border-bottom: 3px solid var(--blue-secondary);
+  transform: translateY(-4px);
+}
+
+.font-roboto {
+  font-family: var(--font-roboto);
+}
+
+.font-cinzel {
+  font-family: "Cinzel", serif;
+}
+
+.text-blue-primary {
+  color: var(--blue-primary);
+}
+
+.hover\:text-blue-primary:hover {
+  color: var(--blue-primary);
+}
+
+.default-button {
+  background-color: var(--blue-primary);
+  transition: all 0.3s ease;
+}
+
+.default-button:hover {
+  background-color: var(--blue-secondary);
+  transform: translateY(-8px);
+}
+
+.valor-card {
+  transition: all 0.3s ease;
+}
+
+.valor-card:hover {
+  transform: translateY(-8px);
+}
+
+.valor-card-title {
+  color: var(--blue-secondary);
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  margin-top: 10px;
+}
+
+.social-icon a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: var(--blue-primary);
+}
+
+.social-icon a svg {
+  width: 30px;
+  height: 30px;
+}
+
+.social-icon a:hover {
+  background-color: var(--blue-primary);
+  color: var(--background);
+}
+
+.section-p p {
+  margin-bottom: 0.5rem;
+}
