@@ -16,7 +16,7 @@
   <!-- Content Overlay -->
   <div class="relative z-10 flex flex-col gap-5 items-center justify-center h-full">
     <div>
-      <img class="w-[350px] md:w-[500px]" alt="Sete Mares" src="/img/logo_azul_sem_fundo.webp">
+      <img class="w-[350px] md:w-[500px]" alt="Sete Mares" src="/img/logo_azul_sem_fundo.webp" width="500">
     </div>
     <p class="text-lg md:text-2xl text-center text-gray-800 font-bold max-w-3xl px-6 bg-white/70 p-4 rounded-lg"
       style="color: #3871c1">

@@ -2,7 +2,7 @@
   <div class="container mx-auto px-6 max-w-10xl w-full">
     <div class="grid md:grid-cols-2 gap-12 md:gap-24 items-center h-full">
       <article class="bg-white rounded-lg shadow-lg p-8 flex justify-center items-center h-full">
-        <img class="w-[90%] max-w-md" src="/img/logo_azul_sem_fundo.webp" alt="Colégio Sete Mares logo" width="500" />
+        <img class="w-[90%] max-w-md" src="/img/logo_azul_sem_fundo.webp" alt="Colégio Sete Mares logo" width="500" height="400" />
       </article>
       <article class="section-p bg-white rounded-lg shadow-lg p-8 h-full flex flex-col justify-center">
         <p class="uppercase text-blue-primary mb-4">

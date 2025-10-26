@@ -1,7 +1,7 @@
 <header class="py-4 px-6 md:px-10 flex justify-between items-center w-full bg-white shadow-md">
   <div class="logo">
     <a href="#">
-      <img class="w-auto h-12" src="/img/logo_azul_sem_fundo.webp" alt="Escola Sete Mares logo" loading="lazy" />
+      <img class="w-auto h-12" src="/img/logo_azul_sem_fundo.webp" alt="Escola Sete Mares logo" loading="lazy" width="50" height="50" />
     </a>
   </div>
 

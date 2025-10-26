@@ -45,7 +45,7 @@
       </article>
       <article class="flex justify-center items-center h-full">
         <img class="w-[100%] max-w-lg rounded-lg" src="/img/aluno.webp" alt="Colégio Sete Mares logo"
-          loading="lazy" />
+          loading="lazy" width="520" height="350" />
       </article>
     </div>
   </div>
