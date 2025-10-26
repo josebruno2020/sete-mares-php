@@ -2,6 +2,12 @@ import './bootstrap';
 
 function contactForm() {
   const form = document.getElementById('contact-form');
+
+  if (form) {
+    form.addEventListener('focus', loadTurnstile, { once: true });
+    form.addEventListener('mouseenter', loadTurnstile, { once: true });
+  }
+
   const submitBtn = document.getElementById('submit-btn');
   const btnText = document.getElementById('btn-text');
   const btnLoading = document.getElementById('btn-loading');
@@ -283,7 +289,53 @@ const initBannerSlider = () => {
   };
 };
 
+function improveImg() {
+  // Lazy loading para imagens
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove('img-loading');
+        observer.unobserve(img);
+      }
+    });
+  }, {
+    rootMargin: '50px'
+  });
+
+  document.querySelectorAll('img[data-src]').forEach(img => {
+    imageObserver.observe(img);
+  });
+
+  // Lazy loading para seções
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-in');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('section').forEach(section => {
+    sectionObserver.observe(section);
+  });
+}
+
+function loadTurnstile() {
+  if (!document.querySelector('script[src*="turnstile"]')) {
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   initBannerSlider();
+  improveImg();
   contactForm();
 });
