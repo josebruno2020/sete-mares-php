@@ -10,6 +10,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok']);
+});
+
 Route::post('/contact', function (Request $request) {
     // Validate required fields
     $request->validate([
