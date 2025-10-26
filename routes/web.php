@@ -21,7 +21,7 @@ Route::post('/contact', function (Request $request) {
     ]);
 
     // Log the submission (without token for security)
-    $logData = $request->except(['token']);
+    $logData = $request->except(['token', '_token']);
     Log::info('Received contact form submission', $logData);
 
     // Validate Turnstile token
@@ -48,7 +48,7 @@ Route::post('/contact', function (Request $request) {
         $mail->Password = config('mail.mailers.smtp.password');
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = config('mail.mailers.smtp.port');
-        $mail->addCC('drive.jbc2@gmail.com');
+        $mail->addCC(config('mail.contact.cc'));
         $mail->CharSet = 'UTF-8';
 
         // Recipients

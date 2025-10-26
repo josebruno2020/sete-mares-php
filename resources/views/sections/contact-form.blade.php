@@ -1,12 +1,12 @@
 <?php
 // Verificar se há mensagem de feedback
-// $message = '';
-// $messageType = '';
-// if (isset($_SESSION['contact_message'])) {
-//   $message = $_SESSION['contact_message']['text'];
-//   $messageType = $_SESSION['contact_message']['type'];
-//   unset($_SESSION['contact_message']);
-// }
+$message = '';
+$messageType = '';
+if (isset($_SESSION['contact_message'])) {
+  $message = $_SESSION['contact_message']['text'];
+  $messageType = $_SESSION['contact_message']['type'];
+  unset($_SESSION['contact_message']);
+}
 ?>
 
 <section id="contato" class="contact bg-gray-50 py-16">
@@ -45,6 +45,7 @@
         </div>
 
         <form class="space-y-4" id="contact-form">
+          @csrf
           <div>
             <label for="name" class="font-cinzel block text-sm font-medium text-gray-700 mb-1">
               Nome completo
@@ -82,10 +83,15 @@
           </div>
 
           <!-- Cloudflare Turnstile -->
-          <div class="cf-turnstile" data-sitekey="<?= $config['TURNSTILE_SITE_KEY'] ?? '0x4AAAAAAB8j77TNjPCMYPpY' ?>"
-            data-theme="light" data-retry="auto" data-refresh-expired="auto" data-callback="turnstileOnSuccess"
-            data-error-callback="turnstileOnError" data-expired-callback="turnstileOnExpire"
-            data-load-callback="turnstileOnLoad">
+          <div class="cf-turnstile" 
+               data-sitekey="{{ config('services.turnstile.site_key') }}"
+               data-theme="light" 
+               data-retry="auto" 
+               data-refresh-expired="auto" 
+               data-callback="turnstileOnSuccess"
+               data-error-callback="turnstileOnError" 
+               data-expired-callback="turnstileOnExpire"
+               data-load-callback="turnstileOnLoad">
           </div>
 
           <button type="submit"
@@ -114,7 +120,7 @@
           </h3>
           <div class="space-y-4">
             <div class="flex items-center border-b border-gray-300 pb-1">
-              <a href="<?= htmlspecialchars(config('links.maps')) ?>" class="flex items-center" target="_blank">
+              <a href="{{ htmlspecialchars(config('links.maps')) }}" class="flex items-center" target="_blank">
                 <svg class="w-5 h-5 text-blue-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd"
                     d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
@@ -145,13 +151,13 @@
           <!-- Social Media -->
           <div class="flex items-center justify-center w-full gap-3">
             <div class="social-icon">
-              <a href="<?= htmlspecialchars(config('links.instagram')) ?>" target="_blank"
+              <a href="{{ htmlspecialchars(config('links.instagram')) }}" target="_blank"
                 rel="noopener noreferrer">
                 <x-svg icon="instagram" />
               </a>
             </div>
             <div class="social-icon">
-              <a href="<?= htmlspecialchars(config('links.facebook')) ?>" target="_blank" rel="noopener noreferrer">
+              <a href="{{ htmlspecialchars(config('links.facebook')) }}" target="_blank" rel="noopener noreferrer">
                 <x-svg icon="facebook" />
               </a>
             </div>
@@ -193,7 +199,8 @@
     turnstileToken = token;
   };
 
-  window.turnstileOnError = function () {
+  window.turnstileOnError = function (err) {
+    console.error('Turnstile error:', err);
     turnstileStatus = 'error';
     showMessage('A verificação de segurança falhou. Por favor, tente novamente.', 'error');
   };
@@ -280,11 +287,12 @@
       email: formData.get('email'),
       phone: formData.get('phone'),
       message: formData.get('message'),
-      token: turnstileToken
+      token: turnstileToken,
+      _token: formData.get('_token'),
     };
 
     try {
-      const response = await fetch('/contact.php', {
+      const response = await fetch('/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

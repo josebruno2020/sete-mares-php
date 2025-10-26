@@ -117,6 +117,7 @@ return [
 
     'contact' => [
         'to' => env('MAIL_CONTACT_TO', 'contato@seudominio.com'),
+        'cc' => env('MAIL_CONTACT_CC', null)
     ],
 
 ];
