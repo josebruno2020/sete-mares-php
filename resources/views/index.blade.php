@@ -3,8 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        
+        <meta name="description" title="Sete Mares"
+            content="Sete Mares: o 1º de Educação Personalizada em Maringá. Excelência acadêmica, valores sólidos e parceria com as famílias. Da educação infantil ao ensino fundamental.">
+        <meta name="robots" content="index, follow">
+        <title>Sete Mares</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
