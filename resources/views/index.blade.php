@@ -7,7 +7,7 @@
         <meta name="description" title="Sete Mares"
             content="Sete Mares: o 1º de Educação Personalizada em Maringá. Excelência acadêmica, valores sólidos e parceria com as famílias. Da educação infantil ao ensino fundamental.">
         <meta name="robots" content="index, follow">
-        <title>Sete Mares</title>
+        <title>Sete Mares - Educação Personalizada</title>
 
         <link rel="preload" as="image" href="/img/logo_azul_sem_fundo.webp" fetchpriority="high">
         <link rel="preload" as="image" href="/img/alunos_2.webp" fetchpriority="high">
