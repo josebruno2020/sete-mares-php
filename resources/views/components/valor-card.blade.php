@@ -16,8 +16,8 @@
             alt="{{ $title }}" 
             class="w-full h-full object-cover rounded-full"
             loading="lazy"
-            width="70"
-            height="70"
+            width="256"
+            height="256"
         />
     </div>
     

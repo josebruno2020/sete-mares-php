@@ -308,18 +308,28 @@ function improveImg() {
     imageObserver.observe(img);
   });
 
-  // Lazy loading para seções
+  // Reveal progressivo para seções
+  const sections = document.querySelectorAll('main section');
+  sections.forEach((section, index) => {
+    if (index === 0) {
+      section.classList.add('is-visible');
+      return;
+    }
+    section.classList.add('reveal-section');
+  });
+
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('animate-fade-in');
+        entry.target.classList.add('is-visible');
+        sectionObserver.unobserve(entry.target);
       }
     });
   }, {
     threshold: 0.1
   });
 
-  document.querySelectorAll('section').forEach(section => {
+  document.querySelectorAll('.reveal-section').forEach(section => {
     sectionObserver.observe(section);
   });
 }

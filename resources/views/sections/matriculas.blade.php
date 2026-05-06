@@ -2,40 +2,29 @@
   <div class="container mx-auto px-6 max-w-10xl w-full">
     <div class="grid md:grid-cols-2 gap-12 md:gap-24 items-center h-full">
       <article class="flex flex-col justify-center items-center h-full">
-        <h2 class="cinzelFont uppercase text-2xl md:text-4xl text-center text-blue-primary mb-4">
-          Matrículas abertas 2026!
+        <h2 class="cinzelFont uppercase text-2xl md:text-4xl text-center text-blue-primary mb-2">
+          Escola Sete Mares
         </h2>
+        {{-- <p class="font-cinzel uppercase text-sm md:text-base tracking-wide text-blue-secondary mb-4">Matrículas abertas 2026!</p> --}}
         <div class="matriculas section-p">
           <x-text
-            text="Se você procura uma escola que caminha ao lado da sua família, com valores sólidos e um olhar integral para cada criança, te convidamos a conhecer de perto o Sete Mares."
+            text="Se você busca uma escola que caminha ao lado da sua família, com valores sólidos e um olhar integral para cada aluno, convidamos você a conhecer de perto o Sete Mares."
             align="justify"
             fontSize="text-lg md:text-xl"
           />
           <x-text
-            text="Em 2026, além da Educação Infantil, teremos também o"
-            :bold-words="['Educação', 'Infantil', '1º', 'ano', 'do', 'Ensino', 'Fundamental.']"
-            align="center"
-            fontSize="text-lg md:text-xl"
-          />
-          <x-text
-            text="1º ano do Ensino Fundamental."
-            :bold-words="['Educação', 'Infantil', '1º', 'ano', 'do', 'Ensino', 'Fundamental.']"
-            align="center"
-            fontSize="text-lg md:text-xl"
-          />
-          <x-text
-            text="É mais um passo na missão de caminhar ao lado das famílias, oferecendo uma Educação Personalizada em um ambiente seguro e acolhedor!"
+            text="Nossa missão é acompanhar cada criança de forma individual e integral, buscando desenvolver suas dimensões fundamentais: intelectual, física, afetivo, social e transcendente."
             align="justify"
             fontSize="text-lg md:text-xl"
           />
           <x-text
-            text="Agende sua visita e venha conhecer"
-            align="center"
+            text="Esse propósito só é possível quando existe uma unidade educativa: onde os valores vividos em casa são fortalecidos e cultivados no ambiente escolar."
+            align="justify"
             fontSize="text-lg md:text-xl"
           />
           <x-text
-            text="nosso projeto pedagógico."
-            align="center"
+            text="No Sete Mares, a família é o centro e o porto seguro de toda a jornada educativa."
+            align="justify"
             fontSize="text-lg md:text-xl"
           />
         </div>
@@ -44,7 +33,7 @@
         </div>
       </article>
       <article class="flex justify-center items-center h-full">
-        <img class="w-[100%] max-w-lg rounded-lg" src="/img/aluno.webp" alt="Colégio Sete Mares logo"
+        <img class="w-[100%] max-w-lg rounded-lg shadow-xl" src="/img/aluno.webp" alt="Aluno da Escola Sete Mares"
           loading="lazy" width="520" height="350" />
       </article>
     </div>

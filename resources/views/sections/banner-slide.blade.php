@@ -1,5 +1,5 @@
 <section id="inicio"
-  class="banner-slider h-[80vh] md:h-[90vh] flex flex-col gap-2 items-center justify-center relative overflow-hidden">
+  class="banner-slider min-h-[80vh] md:min-h-[90vh] flex flex-col gap-2 items-center justify-center relative overflow-hidden py-8 sm:py-10 md:py-12">
   <!-- Background Images -->
   <div id="image-container">
     <div class="banner-image active absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-50"
@@ -14,18 +14,19 @@
   </div>
 
   <!-- Content Overlay -->
-  <div class="relative z-10 flex flex-col gap-5 items-center justify-center h-full">
+  <div class="relative z-10 flex flex-col gap-4 sm:gap-5 items-center justify-center h-full pt-6 pb-20 md:pb-16 px-4">
     <div>
-      <img class="w-[350px] md:w-[500px]" alt="Sete Mares" src="/img/logo_azul_sem_fundo.webp" width="500">
+      <img class="w-[220px] sm:w-[300px] md:w-[380px] lg:w-[500px]" alt="Sete Mares" src="/img/logo_azul_sem_fundo.webp"
+        width="500">
     </div>
-    <p class="text-lg md:text-2xl text-center text-gray-800 font-bold max-w-3xl px-6 bg-white/70 p-4 rounded-lg"
+    <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-gray-800 font-bold max-w-2xl lg:max-w-3xl px-4 md:px-6 bg-white/70 p-4 rounded-lg"
       style="color: #3871c1">
       Educação Personalizada em Maringá
     </p>
     <x-button
       text="CONHEÇA NOSSA PROPOSTA"
       href="#sobre"
-      class="" />
+      class="mt-1 md:mt-2" />
   </div>
 
   <!-- Navigation Arrows -->
@@ -46,7 +47,7 @@
   </button>
 
   <!-- Dots Indicator -->
-  <div id="dots-container" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+  <div id="dots-container" class="absolute bottom-5 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
     <button class="dot active w-3 h-3 rounded-full transition-all duration-300 bg-white shadow-lg" data-slide="0"
       aria-label="Ir para imagem 1"></button>
     <button class="dot w-3 h-3 rounded-full transition-all duration-300 bg-white/50 hover:bg-white/70" data-slide="1"

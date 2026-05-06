@@ -15,6 +15,7 @@
   --foreground: #171717;
   --blue-primary: #51ade5;
   --blue-secondary: #3871c1;
+  --surface-soft: #f9fbff;
   --font-roboto: "Arial", sans-serif;
   --font-cinzel: "Georgia", serif;
 }
@@ -27,6 +28,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
 }
 
 .cinzelFont {
@@ -61,7 +64,7 @@ body {
 
 .menu-item:hover {
   border-bottom: 3px solid var(--blue-secondary);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 .font-roboto {
@@ -83,19 +86,23 @@ body {
 .default-button {
   background-color: var(--blue-primary);
   transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(56, 113, 193, 0.16);
 }
 
 .default-button:hover {
   background-color: var(--blue-secondary);
-  transform: translateY(-8px);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(56, 113, 193, 0.24);
 }
 
 .valor-card {
   transition: all 0.3s ease;
+  border: 1px solid rgba(56, 113, 193, 0.1);
 }
 
 .valor-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(56, 113, 193, 0.12);
 }
 
 .valor-card-title {
@@ -131,4 +138,61 @@ body {
 
 .section-p p {
   margin-bottom: 0.5rem;
+}
+
+.banner-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.4));
+  pointer-events: none;
+}
+
+.reveal-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--blue-secondary);
+  outline-offset: 2px;
+}
+
+#contato input,
+#contato textarea {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+#contato input:focus,
+#contato textarea:focus {
+  border-color: rgba(56, 113, 193, 0.6);
+  box-shadow: 0 0 0 3px rgba(56, 113, 193, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-section {
+    opacity: 1;
+    transform: none;
+  }
 }

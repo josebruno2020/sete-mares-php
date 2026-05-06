@@ -8,7 +8,12 @@
         Educação Personalizada
       </h2>
       <x-text
-        text="Um lugar fruto da união de pais e educadores que têm uma profunda preocupação com a formação das crianças em todas as suas fases de desenvolvimento."
+        text="Um lugar fruto da união de pais e educadores que têm uma profunda preocupação com a formação das crianças"
+        align="center"
+        fontSize="text-lg md:text-xl"
+      />
+      <x-text
+        text="em todas as suas fases de desenvolvimento."
         align="center"
         fontSize="text-lg md:text-xl"
       />

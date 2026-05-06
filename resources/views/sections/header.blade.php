@@ -1,18 +1,18 @@
-<header class="py-4 px-6 md:px-10 flex justify-between items-center w-full bg-white shadow-md">
+<header class="sticky top-0 z-40 py-4 px-6 md:px-10 flex justify-between items-center w-full bg-white/90 backdrop-blur-sm border-b border-blue-100 shadow-sm">
   <div class="logo">
-    <a href="#">
+    <a href="#inicio" aria-label="Ir para o início">
       <img class="w-auto h-12" src="/img/logo_azul_sem_fundo.webp" alt="Escola Sete Mares logo" loading="lazy" width="50" height="50" />
     </a>
   </div>
 
-  <nav class="hidden md:flex items-center gap-8">
-    <a href="#" class="menu-item text-gray-700 hover:text-blue-primary transition-colors duration-300">
+  <nav class="hidden md:flex items-center gap-8" aria-label="Navegação principal">
+    <a href="#inicio" class="menu-item text-gray-700 hover:text-blue-primary transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-primary rounded-sm">
       Início
     </a>
-    <a href="#sobre" class="menu-item text-gray-700 hover:text-blue-primary transition-colors duration-300">
+    <a href="#sobre" class="menu-item text-gray-700 hover:text-blue-primary transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-primary rounded-sm">
       Sobre
     </a>
-    <a href="#contato" class="menu-item text-gray-700 hover:text-blue-primary transition-colors duration-300">
+    <a href="#contato" class="menu-item text-gray-700 hover:text-blue-primary transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-primary rounded-sm">
       Contato
     </a>
   </nav>
